@@ -1,0 +1,489 @@
+/* =========================================
+   THE FOOD RECIPE - ADMIN DASHBOARD STYLES
+========================================= */
+
+:root {
+    --accent: #f05b32;
+    --accent-dark: #d94a23;
+    --accent-soft: #fde9e2;
+    --bg: #fffaf6;
+    --card: #ffffff;
+    --text: #332b27;
+    --muted: #766b64;
+    --border: #eaded6;
+    --green: #2e9e5b;
+    --shadow: 0 6px 20px rgba(51, 43, 39, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ---------- Header ---------- */
+
+.admin-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 32px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.admin-logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.logout-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Layout ---------- */
+
+.admin-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    flex: 1;
+}
+
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.dashboard-heading h1 {
+    font-size: 2rem;
+}
+
+.dashboard-heading p {
+    color: var(--muted);
+}
+
+.admin-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 4px rgba(46, 158, 91, 0.2);
+}
+
+
+/* ---------- Stat cards ---------- */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background: var(--accent-soft);
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.stat-info h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.stat-info p {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+
+/* ---------- Dashboard cards ---------- */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.dashboard-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 22px;
+    min-width: 0;
+}
+
+.data-section,
+.quick-actions {
+    margin-bottom: 28px;
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.card-header h2 {
+    font-size: 1.15rem;
+}
+
+.card-header p {
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.clear-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.clear-btn:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+
+/* ---------- Tables ---------- */
+
+.table-container {
+    max-height: 340px;
+    overflow: auto;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 0.92rem;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background: var(--accent-soft);
+    color: var(--text);
+    font-weight: 700;
+}
+
+tbody tr {
+    border-top: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background: #fff6f1;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.recipe-name {
+    font-weight: 600;
+}
+
+.recipe-category {
+    color: var(--muted);
+}
+
+.recipe-rating {
+    white-space: nowrap;
+}
+
+
+/* ---------- Reviews ---------- */
+
+.reviews-container,
+.activity-container {
+    max-height: 340px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 4px;
+}
+
+.review-item {
+    padding: 14px 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.review-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.review-rating {
+    color: var(--accent-dark);
+    white-space: nowrap;
+}
+
+.review-recipe {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.review-text {
+    font-size: 0.92rem;
+    word-break: break-word;
+}
+
+
+/* ---------- Activity ---------- */
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.activity-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.activity-action {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.activity-details {
+    font-size: 0.88rem;
+    color: var(--muted);
+    word-break: break-word;
+}
+
+.activity-time {
+    font-size: 0.78rem;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 28px 12px;
+    color: var(--muted);
+}
+
+.empty-state-icon {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+
+/* ---------- Website data ---------- */
+
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+}
+
+.data-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.data-box-icon {
+    font-size: 1.6rem;
+}
+
+.data-box h3 {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.data-box p {
+    font-weight: 700;
+}
+
+
+/* ---------- Quick actions ---------- */
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.action-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Footer ---------- */
+
+.admin-footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    background: var(--card);
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 520px) {
+    .admin-header {
+        padding: 12px 16px;
+    }
+
+    .admin-header-right span {
+        display: none;
+    }
+
+    .admin-container {
+        padding: 20px 14px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
