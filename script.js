@@ -328,7 +328,7 @@ const recipes = [
         name: "Chicken Manchuria",
         category: "indian",
         craving: "spicy",
-        image: "images/chicken manchuria.jpeg",
+        image: "images/chicken manchuria.jpg",
         rating: 4.7,
         time: "35 min",
         difficulty: "Medium",
